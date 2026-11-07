@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -78,66 +77,6 @@
       animation: pulse 5s ease-in-out infinite alternate;
     }
     .hero-content { max-width: 760px; }
-
-    /* Aparat Live Card */
-    .aparat-live-card {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-bottom: 30px;
-      padding: 13px 18px;
-      border: 1px solid rgba(76,166,255,.25);
-      border-radius: 12px;
-      background: rgba(12,19,31,.8);
-      box-shadow: 0 0 25px rgba(0,120,255,.07);
-      backdrop-filter: blur(12px);
-    }
-    .aparat-live-indicator {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #929bad;
-      flex-shrink: 0;
-    }
-    .aparat-live-card.live .aparat-live-indicator {
-      background: #ff3434;
-      box-shadow: 0 0 13px #ff3434;
-      animation: livePulse 1.3s infinite;
-    }
-    .aparat-live-card.offline .aparat-live-indicator {
-      background: #929bad;
-    }
-    .aparat-live-card.unknown .aparat-live-indicator {
-      background: #ffb14a;
-      box-shadow: 0 0 10px #ffb14a;
-    }
-    .aparat-live-label {
-      font-size: 13px;
-      font-weight: 800;
-      color: #eaf5ff;
-    }
-    .aparat-live-card.live .aparat-live-label {
-      color: #ff5555;
-    }
-    .aparat-live-card a {
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 700;
-      border-right: 1px solid rgba(255,255,255,.16);
-      padding-right: 13px;
-    }
-    .aparat-live-card a:hover { color: white; }
-    .aparat-live-time {
-      width: 100%;
-      color: var(--muted);
-      font-size: 10px;
-    }
-    @keyframes livePulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .45; }
-    }
-
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--cyan); font-size: 12px; letter-spacing: 3px; direction: ltr; }
     .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
     h1 { direction: ltr; text-align: right; font-size: clamp(76px, 14vw, 150px); line-height: .98; letter-spacing: -5px; margin: 23px 0 25px; font-weight: 950; }
@@ -189,6 +128,48 @@
     footer { margin-top: 45px; border-top: 1px solid rgba(105,160,230,.13); padding: 25px 0; color: #778398; font-size: 12px; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
     .footer-inner span { direction: ltr; }
+
+    /* Aparat live status card */
+    .aparat-live-card {
+      display: inline-flex; align-items: center; flex-wrap: wrap; gap: 11px;
+      max-width: 100%; margin-bottom: 25px; padding: 11px 15px;
+      border: 1px solid rgba(255,193,7,.55); border-radius: 10px;
+      background: rgba(255,193,7,.07); color: #ffd54f;
+      font-size: 13px; font-weight: 700;
+      box-shadow: 0 0 22px rgba(255,193,7,.07);
+      transition: color .2s, border-color .2s, background .2s, box-shadow .2s;
+    }
+    .aparat-live-indicator {
+      flex: 0 0 9px; width: 9px; height: 9px; border-radius: 50%;
+      background: #ffc107; box-shadow: 0 0 12px #ffc107;
+    }
+    .aparat-live-card.live {
+      color: #00e676; border-color: rgba(0,230,118,.65);
+      background: rgba(0,230,118,.08); box-shadow: 0 0 22px rgba(0,230,118,.09);
+    }
+    .aparat-live-card.live .aparat-live-indicator {
+      background: #00e676; box-shadow: 0 0 13px #00e676;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+    .aparat-live-card.offline {
+      color: #ff5252; border-color: rgba(255,82,82,.65);
+      background: rgba(255,82,82,.08); box-shadow: 0 0 22px rgba(255,82,82,.08);
+    }
+    .aparat-live-card.offline .aparat-live-indicator {
+      background: #ff5252; box-shadow: 0 0 12px #ff5252;
+    }
+    .aparat-live-card.unknown {
+      color: #ffd54f; border-color: rgba(255,213,79,.65);
+      background: rgba(255,193,7,.07); box-shadow: 0 0 22px rgba(255,193,7,.07);
+    }
+    .aparat-live-card.unknown .aparat-live-indicator {
+      background: #ffc107; box-shadow: 0 0 12px #ffc107;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+    .aparat-live-card a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .aparat-live-time { color: #9aa7ba; font-size: 11px; font-weight: 500; }
+    @keyframes livePulse { 50% { opacity: .45; transform: scale(.82); } }
+
     @keyframes pulse { from { transform: scale(.92); opacity: .65; } to { transform: scale(1.08); opacity: 1; } }
     @media (max-width: 720px) {
       nav { min-height: 70px; }
@@ -217,32 +198,26 @@
         <a href="#about">درباره ما</a>
         <a href="#social">شبکه‌های اجتماعی</a>
       </div>
-      <a class="nav-cta" href="#social">Fallow HsM <span>↗</span></a>
+      <a class="nav-cta" href="#social">دنبال کردن HsM <span>↗</span></a>
     </nav>
   </header>
 
   <main>
     <section class="hero container" id="home">
       <div class="hero-content">
-
-        <!-- Aparat Live Status -->
-        <div class="aparat-live-card unknown" id="aparat-live-card">
-          <span class="aparat-live-indicator"></span>
-          <span class="aparat-live-label" id="aparat-live-text" aria-live="polite">
-            در حال بررسی وضعیت آپارات...
-          </span>
-          <a href="https://www.aparat.com/Hesam_GamerX/live"
-             target="_blank" rel="noopener noreferrer">مشاهده استریم ↗</a>
+        <div class="aparat-live-card unknown" id="aparat-live-card" role="status" aria-live="polite">
+          <span class="aparat-live-indicator" aria-hidden="true"></span>
+          <span id="aparat-live-text">در حال بررسی وضعیت آپارات...</span>
+          <a href="https://www.aparat.com/Hesam_GamerX/live" target="_blank" rel="noopener noreferrer">مشاهده استریم ↗</a>
           <span class="aparat-live-time" id="aparat-live-time"></span>
         </div>
-
         <div class="eyebrow">GAMING / DIGITAL IDENTITY</div>
         <h1><span class="hsm">HsM</span><span class="dot">.</span></h1>
         <h2>فراتر از بازی. یک هویت مستقل.</h2>
-        <p>Welcome To HsM Website Stream.</p>
+        <p>به دنیای HsM خوش اومدی؛ جایی برای گیمینگ، محتوا و ارتباط با جامعه‌ای که متفاوت فکر می‌کنه.</p>
         <div class="hero-actions">
           <a class="button primary" href="#social">ورود به شبکه‌های اجتماعی <span>←</span></a>
-          <a class="button secondary" href="#about">درباره من</a>
+          <a class="button secondary" href="#about">بیشتر درباره HsM</a>
         </div>
         <div class="status"><span class="status-dot"></span> HsM COMMUNITY <span style="color:#35445b">/</span> OFFICIAL HUB</div>
       </div>
@@ -254,7 +229,7 @@
           <div class="section-kicker">CONNECT WITH US</div>
           <h3 class="section-title">همراه HsM باش</h3>
         </div>
-        <p class="section-desc">از اینجا میتونی وارد صفحه های رسمی و وارد استریم من بشی.</p>
+        <p class="section-desc">از اینجا می‌تونی وارد صفحه‌های رسمی HsM بشی. از اینجا می‌تونی وارد صفحه‌های رسمی HsM بشی.</p>
       </div>
 
       <div class="social-grid">
@@ -272,16 +247,16 @@
             <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.55 3.6 12 3.6 12 3.6s-7.55 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.85.5 9.4.5 9.4.5s7.55 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.7V8.3l6.3 3.7-6.3 3.7Z"/></svg>
           </div>
           <h4>YouTube</h4>
-          <p>ویدیوها، محتوا ، فان و جذاب</p>
+          <p>ویدیوها، محتوا و لحظه‌های خاص</p>
           <span class="social-arrow">↗</span>
         </a>
 
-        <a class="social-card" href="https://www.aparat.com/Hesam_GamerX/live" target="_blank" rel="noopener noreferrer" style="--accent:#ffb14a;--glow:rgba(255,177,74,.2)">
+        <a class="social-card" href="https://www.aparat.com/Hesam_GamerX" target="_blank" rel="noopener noreferrer" style="--accent:#ffb14a;--glow:rgba(255,177,74,.2)">
           <div class="social-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.51 10.51 0 0 0 12 1.5Zm-2.2 14.8V7.7l7.1 4.3-7.1 4.3Z"/></svg>
           </div>
           <h4>Aparat</h4>
-          <p>صفحه استریم ، گیم پلی</p>
+          <p>محتوای ویدیویی HsM در آپارات</p>
           <span class="social-arrow">↗</span>
         </a>
 
@@ -290,7 +265,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7Zm0 3.1 5.8 3.2-5.8 3.2-5.8-3.2Zm-6.5 5.2 5.2 2.9v5.8l-5.2-2.9Zm13 0v5.8l-5.2 2.9v-5.8Z"/></svg>
           </div>
           <h4>Rubika</h4>
-          <p>اطلاعیه در روبیکا</p>
+          <p>صفحه رسمی HsM در روبیکا</p>
           <span class="social-arrow">↗</span>
         </a>
 
@@ -309,7 +284,7 @@
       <div class="brand-strip">
         <div>
           <strong>یک نام. یک هویت. <span style="color:var(--blue)">HsM.</span></strong>
-          <p>گیمینگ مدرن، گیم پلی و استریم.</p>
+          <p>گیمینگ مدرن، طراحی دارک و ارتباط با جامعه.</p>
         </div>
         <div class="brand-mark">PLAY DIFFERENT.</div>
       </div>
@@ -329,18 +304,18 @@
       const label = document.getElementById("aparat-live-text");
       const time = document.getElementById("aparat-live-time");
 
-      try {
-        const response = await fetch(
-          "./aparat-status.json?t=" + Date.now(),
-          { cache: "no-store" }
-        );
+      // تا دریافت پاسخ تازه، وضعیت زرد و نامشخص نمایش داده می‌شود.
+      card.classList.remove("live", "offline");
+      card.classList.add("unknown");
+      label.textContent = "در حال بررسی وضعیت آپارات...";
 
-        if (!response.ok) {
-          throw new Error("Status file unavailable");
-        }
+      try {
+        const response = await fetch("./aparat-status.json?t=" + Date.now(), {
+          cache: "no-store"
+        });
+        if (!response.ok) throw new Error("Status file unavailable");
 
         const data = await response.json();
-
         card.classList.remove("live", "offline", "unknown");
 
         if (data.status === "live") {
@@ -356,15 +331,15 @@
 
         if (data.checkedAt) {
           const checked = new Date(data.checkedAt);
-          time.textContent = "آخرین بررسی: " +
-            checked.toLocaleTimeString("fa-IR");
+          time.textContent = "آخرین بررسی: " + checked.toLocaleTimeString("fa-IR");
+        } else {
+          time.textContent = "";
         }
-
       } catch (error) {
         card.classList.remove("live", "offline");
         card.classList.add("unknown");
-        label.textContent = "خطا در دریافت وضعیت آپارات";
-        time.textContent = "لطفاً بعداً دوباره بررسی کنید";
+        label.textContent = "وضعیت استریم نامشخص است";
+        time.textContent = "خطا در دریافت اطلاعات";
         console.error("Aparat status error:", error);
       }
     }
@@ -372,5 +347,6 @@
     updateAparatStatus();
     setInterval(updateAparatStatus, 60000);
   </script>
+
 </body>
 </html>
