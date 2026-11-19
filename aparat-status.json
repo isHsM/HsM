@@ -1,6 +1,7 @@
 {
-  "status": "offline",
+  "status": "unknown",
   "username": "Hesam_GamerX",
   "url": "https://www.aparat.com/Hesam_GamerX/live",
-  "checkedAt": "2026-11-18T19:07:51.638Z"
+  "checkedAt": "2026-11-19T01:10:55.703Z",
+  "error": "HTTP Error: 504"
 }
